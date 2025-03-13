@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 def send_email(user_email, responses):
     EMAIL_SENDER = "votre_email@gmail.com"
     EMAIL_PASSWORD = "votre_mot_de_passe"
-    EMAIL_RECEIVER = "destinataire_email@gmail.com"
+    EMAIL_RECEIVER = "t.petillat@razel-bec.fayat.com"
     
     subject = "Réponses du formulaire"
     body = f"Adresse e-mail de l'utilisateur : {user_email}\n\n"
@@ -29,16 +29,22 @@ st.title("Formulaire de validation")
 
 user_email = st.text_input("Votre adresse e-mail", "")
 
-questions = [
+questions_oui_non = [
     "Avez-vous bien compris les consignes ?",
-    "Le matériel est-il prêt ?",
-    "L'équipe est-elle complète ?",
-    "Les conditions météo sont-elles favorables ?"
+    "Le matériel est-il prêt ?"
+]
+
+questions_texte = [
+    "Quels sont les problèmes éventuels rencontrés ?",
+    "Avez-vous des remarques supplémentaires ?"
 ]
 
 responses = {}
-for question in questions:
+for question in questions_oui_non:
     responses[question] = st.radio(question, ["Oui", "Non"], index=0)
+
+for question in questions_texte:
+    responses[question] = st.text_area(question, "")
 
 if st.button("Envoyer"):
     if user_email:
