@@ -4,8 +4,8 @@ from email.mime.text import MIMEText
 
 def send_email(user_email, responses):
     EMAIL_SENDER = "votre_email@gmail.com"
-    EMAIL_PASSWORD = "votre_mot_de_passe"
-    EMAIL_RECEIVER = "t.petillat@razel-bec.fayat.com"
+    EMAIL_PASSWORD = "toroye78"
+    EMAIL_RECEIVER = "t.petillat@elv.esitc-paris.fr"
     
     subject = "Réponses du formulaire"
     body = f"Adresse e-mail de l'utilisateur : {user_email}\n\n"
