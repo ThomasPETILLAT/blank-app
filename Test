@@ -1,0 +1,16 @@
+import smtplib
+
+EMAIL_SENDER = "votre_email@gmail.com"
+EMAIL_PASSWORD = "votre_mot_de_passe_application"
+EMAIL_RECEIVER = "t.petillat@razel-bec.fayat.com"
+
+try:
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+    message = "Subject: Test SMTP\n\nCeci est un test d'envoi d'email via SMTP en Python."
+    server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, message)
+    server.quit()
+    print("E-mail envoyé avec succès !")
+except Exception as e:
+    print(f"Erreur lors de l'envoi de l'e-mail : {e}")
