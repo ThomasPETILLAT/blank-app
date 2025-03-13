@@ -5,6 +5,18 @@ from email.message import EmailMessage
 
 
 
+razel_bec_url = "https://razel-bec.fayat.com/"
+image_path = "/workspaces/blank-app/Logo_Razel-Bec.jpg"
+
+# Afficher l'image avec un texte cliquable en dessous
+st.image(image_path, use_container_width=True)
+st.markdown(f"[Cliquez ici pour accéder à Razel-Bec]({razel_bec_url})")
+
+
+
+
+
+
 # Titre et description
 titre = "Questionnaire de satisfaction client"
 description = """
